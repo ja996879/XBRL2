@@ -1,0 +1,9 @@
+n=0
+wb = xlsx_package.workbook
+       wb.add_worksheet(name: "Products") do |sheet|
+          @tagmean.each do |v|
+           
+            sheet.add_row [v.tagmean,@ans[n]]
+             n=n+1
+          end
+       end

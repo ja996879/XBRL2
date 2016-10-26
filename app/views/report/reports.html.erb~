@@ -1,0 +1,9 @@
+<html>
+<p id="notice"><%= notice %></p>
+
+<%= @c %>
+<%=raw (@data.to_json) %>
+<div id="container" style="width: 570px; height: 275px; margin: 0 auto"></div>
+
+<%=link_to "上一頁" , report_path %>
+</html>

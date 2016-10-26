@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anay</title>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+
+</head>
+<body>
+<script>
+$(function () {
+    
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Welcome'
+        },
+        subtitle: {
+            text: 'Chart Report'
+        },
+        xAxis: {
+            categories: <%= raw (@c) %>,
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'NT()'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: <%= raw (@data.to_json) %> 
+    });
+});
+</script>
+   <div id="nav">
+         <div id="banner" >
+            <%=image_tag("total.jpg")%>
+   	 </div>
+   </div>
+<%= yield %>
+
+</body>
+</html>

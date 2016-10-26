@@ -1,0 +1,10 @@
+# /lib/tasks/e.rake
+namespace :e do
+ desc "add system"
+ task :rebuild => [:fake]
+ task :fake=>:environment do
+     u=User.new(:name=>"root")
+   u.save
+end
+end
+

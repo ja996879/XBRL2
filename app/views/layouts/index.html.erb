@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anay</title>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+
+</head>
+<body>
+<script>
+  
+$(document).ready(function(){
+   
+   //$('#stockid option[value=2311]').attr('selected','selected');
+   $('#stockid')[0].selectedIndex = 0;
+   $('#qdate')[0].selectedIndex = 0;
+});
+
+</script>
+ <div id="total">
+   <div id="nav">
+         <div id="banner" >
+            <%=image_tag("total.jpg")%>
+   	 </div>
+   </div>
+
+<%= yield %>
+</div>
+
+</body>
+</html>

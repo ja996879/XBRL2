@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Betweens</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Datename</th>
+      <th>Datetag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @betweens.each do |between| %>
+      <tr>
+        <td><%= between.datename %></td>
+        <td><%= between.datetag %></td>
+        <td><%= link_to 'Show', between %></td>
+        <td><%= link_to 'Edit', edit_between_path(between) %></td>
+        <td><%= link_to 'Destroy', between, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Between', new_between_path %>

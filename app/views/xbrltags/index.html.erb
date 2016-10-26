@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Xbrltags</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tagname</th>
+      <th>Tagmean</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @xbrltags.each do |xbrltag| %>
+      <tr>
+        <td><%= xbrltag.tagname %></td>
+        <td><%= xbrltag.tagmean %></td>
+        <td><%= link_to 'Show', xbrltag %></td>
+        <td><%= link_to 'Edit', edit_xbrltag_path(xbrltag) %></td>
+        <td><%= link_to 'Destroy', xbrltag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Xbrltag', new_xbrltag_path %>

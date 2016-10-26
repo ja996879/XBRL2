@@ -1,0 +1,25 @@
+<%= form_for(@between) do |f| %>
+  <% if @between.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@between.errors.count, "error") %> prohibited this between from being saved:</h2>
+
+      <ul>
+      <% @between.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :datename %><br>
+    <%= f.text_field :datename %>
+  </div>
+  <div class="field">
+    <%= f.label :datetag %><br>
+    <%= f.text_field :datetag %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

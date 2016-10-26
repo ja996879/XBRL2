@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<h1>hello 2</h1>
+<%= form_tag('sayreport/sanalysis',method: :get) %>
+<%= select_tag "stockid" , options_for_select(@companies.collect{ |c| [c.cname,c.stock]}) %>
+ <%= select_tag "qdate" , options_for_select(@betweens.collect{ |b| [b.datename,b.datetag]}) %>
+<%= submit_tag "spending" %>

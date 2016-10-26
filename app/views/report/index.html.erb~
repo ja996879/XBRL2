@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<div id="cont">
+<h2>可多選</h2>
+ <%= form_tag('/index/areport-charts',method: :get) %>
+ <%= select_tag "stockid" , options_for_select(@companies.collect{ |c| [c.cname,c.stock]}), multiple: true %>
+ <%= select_tag "qdate" , options_for_select(@betweens.collect{ |b| [b.datename,b.datetag]}),multiple: true %>
+ <%= select_tag "mean" , options_for_select(@xbrltags.collect{ |c| [c.tagmean,c.tagname]}) %>
+<%= submit_tag "開始" %>
+ 
+</div>
+<a href="/export_list">123</a>
+
+<%=image_tag("PA1.jpg",height:300,width:250,id:"myimage")%>
